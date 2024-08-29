@@ -1,0 +1,30 @@
+2024-08-29 14:32:29,618 - WARNING -  * Debugger is active!
+2024-08-29 14:32:29,623 - INFO -  * Debugger PIN: 798-057-535
+2024-08-29 14:32:29,641 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=10400, id=71738643): is_file, is_inode_meta_mod
+2024-08-29 14:32:29,641 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log', is_directory=False>
+2024-08-29 14:32:29,676 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=410400, id=71738670): is_cloned, is_file, is_inode_meta_mod
+2024-08-29 14:32:29,676 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log', is_directory=False>
+2024-08-29 14:32:30,444 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py", inode=72208277, flags=418000, id=71738818): is_cloned, is_file, is_xattr_mod
+2024-08-29 14:32:30,444 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py', is_directory=False>
+2024-08-29 14:32:30,445 - INFO -  * Detected change in '/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py', reloading
+2024-08-29 14:32:31,794 - WARNING -  * Debugger is active!
+2024-08-29 14:32:31,799 - INFO -  * Debugger PIN: 798-057-535
+2024-08-29 14:32:33,503 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai", inode=72208268, flags=20400, id=71739087): is_directory, is_inode_meta_mod
+2024-08-29 14:32:33,503 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai', is_directory=True>
+2024-08-29 14:32:33,552 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=410400, id=71739108): is_cloned, is_file, is_inode_meta_mod
+2024-08-29 14:32:33,553 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log', is_directory=False>
+2024-08-29 14:32:35,267 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai", inode=72208268, flags=20400, id=71739251): is_directory, is_inode_meta_mod
+2024-08-29 14:32:35,267 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai', is_directory=True>
+2024-08-29 14:32:39,614 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=410000, id=71739284): is_cloned, is_file
+2024-08-29 14:32:41,474 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai", inode=72208268, flags=20400, id=71739467): is_directory, is_inode_meta_mod
+2024-08-29 14:32:41,474 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai', is_directory=True>
+2024-08-29 14:32:49,275 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=410000, id=71739555): is_cloned, is_file
+2024-08-29 14:32:51,023 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai", inode=72208268, flags=20400, id=71739746): is_directory, is_inode_meta_mod
+2024-08-29 14:32:51,023 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai', is_directory=True>
+2024-08-29 14:33:08,692 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.log", inode=72237209, flags=410000, id=71740308): is_cloned, is_file
+2024-08-29 14:33:10,532 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai", inode=72208268, flags=20400, id=71740478): is_directory, is_inode_meta_mod
+2024-08-29 14:33:10,532 - DEBUG - queue_event <DirModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai', is_directory=True>
+2024-08-29 14:33:11,161 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py", inode=72208277, flags=11400, id=71740505): is_file, is_inode_meta_mod, is_modified
+2024-08-29 14:33:11,161 - DEBUG - queue_event <FileModifiedEvent: event_type=modified, src_path='/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py', is_directory=False>
+2024-08-29 14:33:11,161 - INFO -  * Detected change in '/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py', reloading
+2024-08-29 14:33:11,368 - DEBUG - NativeEvent(path="/Users/k8nowak/Documents/1. Projects/diagram_ai/app.py", inode=72208277, flags=410000, id=71740530): is_cloned, is_file

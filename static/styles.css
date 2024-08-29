@@ -5,16 +5,14 @@
     --text-color: #444;
 }
 
-@font-face {
-    font-family: 'Nunito';
-    src: url('fonts/Nunito/static/Nunito-Regular.ttf') format('truetype'),
-         url('fonts/Nunito/static/Nunito-Bold.ttf') format('truetype');
+/* @font-face {
+    font-family: 'Helvetica';
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 body {
-    font-family: "Nunito", sans-serif;
+    font-family: "Helvetica", sans-serif;
     line-height: 1.6;
     letter-spacing: 0.5px;
     margin: 0;
