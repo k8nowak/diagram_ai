@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Diagram from a Description</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header-container">
+        <h1>Describe a Diagram</h1>
+        <form action="/" method="POST" id="input-form">
+            <input type="text" name="user_input" id="dynamic-placeholder" placeholder="graph of y=-x^2+1" required value="{{ user_input if user_input else '' }}">
+            <div class="button-container">
+                <button type="submit">Submit</button>
+                <button type="button" id="reset-button">Reset</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container">
+        {% if error_message %}
+        <div class="error-message">
+            <p>{{ error_message }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="image-container">
+            {% if file_path %}
+            <div class="image">
+                <img id="diagram-image" src="{{ url_for('uploaded_file', filename=file_path) }}?t={{ current_time }}" alt="Rendered TikZ Diagram (SVG)" style="width: {{ width }}px; height: {{ height }}px;">
+            </div>
+            {% endif %}
+        </div>
+        
+        {% if response %}
+        <div class="response" id="response-container">
+            
+            <form action="/" method="POST">
+                <div>
+                    <h3>You can edit this code:</h3>
+                    <textarea name="edited_latex" rows="20" cols="50">{{ response }}</textarea>
+                </div>
+                <div>
+                    <h3>And/or describe any changes you would like:</h3>
+                    <textarea name="change_description" rows="2" cols="50" placeholder="Describe the change you want"></textarea>
+                </div>
+            
+                <!-- input fields for dimensions -->
+                <h3>You can change the overall dimensions of the image:</h3>
+                <div class="dimension-inputs">
+                    
+                    <div class="dimension-input">
+                        <label for="width">Width (px):</label>
+                        <input type="number" name="width" id="width" value="{{ width if width else 300 }}" min="1" required>
+                    </div>
+                    <div class="dimension-input">
+                        <label for="height">Height (px):</label>
+                        <input type="number" name="height" id="height" value="{{ height if height else 300 }}" min="1" required>
+                    </div>
+                </div>
+            
+                <div class="button-container">
+                    <button type="submit" name="action" value="apply-change">Apply Change</button>
+                </div>
+            </form>
+        </div>
+        
+        {% endif %}
+    </div>
+
+    <script>
+
+        function updateImage() {
+            const diagramImage = document.getElementById('diagram-image');
+            if (diagramImage) {
+                const currentTime = new Date().getTime();  // Generate a unique timestamp
+                diagramImage.src = diagramImage.src.split('?')[0] + '?t=' + currentTime;
+            }
+        }
+        
+
+        document.getElementById('reset-button').addEventListener('click', function() {
+            // Reset the form fields
+            document.getElementById('input-form').reset();
+            document.getElementById('dynamic-placeholder').value = '';
+    
+            // Clear the displayed SVG image
+            const diagramImage = document.getElementById('diagram-image');
+            if (diagramImage) {
+                diagramImage.remove();
+            }
+    
+            // Clear the LaTeX code and hide the response container
+            const responseContainer = document.getElementById('response-container');
+            if (responseContainer) {
+                responseContainer.style.display = 'none';
+            }
+    
+            // Clear the image container
+            const imageContainer = document.querySelector('.image-container');
+            if (imageContainer) {
+                imageContainer.innerHTML = ''; // Clear out any content within the image container
+            }
+        });
+
+        // Placeholder cycling logic
+        const placeholderMessages = [
+            "graph of y=-x^2+1",
+            "an isosceles triangle",
+            "a number line from -10 to 10 labeled in increments of 2"
+        ];
+
+        let currentIndex = 0;
+
+        function cyclePlaceholders() {
+            const placeholderInput = document.getElementById('dynamic-placeholder');
+            placeholderInput.placeholder = placeholderMessages[currentIndex];
+            currentIndex = (currentIndex + 1) % placeholderMessages.length;
+        }
+
+        // Cycle every 3 seconds
+        setInterval(cyclePlaceholders, 3000);
+
+        // Trigger the image update after form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Call updateImage after a short delay to allow server processing
+            setTimeout(updateImage, 2500);  // Adjust delay to ensure SVG generation is complete
+        });
+
+    </script>
+    
+</body>
+</html>
